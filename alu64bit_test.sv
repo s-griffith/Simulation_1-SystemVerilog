@@ -36,6 +36,5 @@ module alu64bit_test;
 		op[0] = 0;
 		op[1] = 1;
 	
-	end
-		
+	end	
 endmodule
