@@ -5,30 +5,30 @@ module mux2 (
     input logic sel,         // Select input
     output logic z           // Output
 );
-	logic a,b,c,d,e;
-	NAND2 #( 
+	logic [4:0] v;
+	NAND2 #(				//used as NOT gate
 			.Tpdhl(4),
 			.Tpdlh(4)
 	) g1_MUX2(
 			.A(sel), 
 			.B(sel), 
-			.Z(a)
+			.Z(v[0])
 	);
 	NAND2 #( 
 			.Tpdhl(4),
 			.Tpdlh(4)
 	) g2_MUX2(
-			.A(a), 
+			.A(v[0]), 
 			.B(d0), 
-			.Z(b)
+			.Z(v[1])
 	);
-	NAND2 #( 
+	NAND2 #(				//used as NOT gate
 			.Tpdhl(4),
 			.Tpdlh(4)
 	) g3_MUX2(
-			.A(b), 
-			.B(b), 
-			.Z(c)
+			.A(v[1]), 
+			.B(v[1]), 
+			.Z(v[2])
 	);
 	NAND2 #( 
 			.Tpdhl(4),
@@ -36,22 +36,22 @@ module mux2 (
 	) g4_MUX2(
 			.A(sel), 
 			.B(d1), 
-			.Z(d)
+			.Z(v[3])
 	);
-	NAND2 #( 
+	NAND2 #(				//used as NOT gate 
 			.Tpdhl(4),
 			.Tpdlh(4)
 	) g5_MUX2(
-			.A(d), 
-			.B(d), 
-			.Z(e)
+			.A(v[3]), 
+			.B(v[3]), 
+			.Z(v[4])
 	);
 	OR2 #( 
 			.Tpdhl(2),
 			.Tpdlh(2)
 	) g6_MUX2(
-			.A(e), 
-			.B(c), 
+			.A(v[4]), 
+			.B(v[2]), 
 			.Z(z)
 	);
 

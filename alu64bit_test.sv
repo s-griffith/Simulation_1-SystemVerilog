@@ -1,5 +1,5 @@
 // 64-bit ALU test bench template
-module alu64bit_test2;
+module alu64bit_test;
 	logic [63:0] a;    // Input bit a
 	logic [63:0] b;    // Input bit b
 	logic cin;         // Carry in

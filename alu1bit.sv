@@ -8,7 +8,7 @@ module alu1bit (
     output logic cout        // Carry out
 );
 	logic [5:0] v;
-	NAND2 #(
+	NAND2 #(				//used as NOT gate
 			.Tpdlh(4),
 			.Tpdhl(4)
 	) g1_ALU1BIT(
@@ -32,7 +32,7 @@ module alu1bit (
 				.B(b),
 				.Z(v[2])
 	);
-	NAND2 #(
+	NAND2 #(				//used as NOT gate
 			.Tpdlh(4),
 			.Tpdhl(4)
 	) g3_ALU1BIT(
@@ -48,7 +48,7 @@ module alu1bit (
 				.B(b),
 				.Z(v[4])
 	);
-	NAND2 #(
+	NAND2 #(				//used as NOT gate
 			.Tpdlh(4),
 			.Tpdhl(4)
 	) g5_ALU1BIT(

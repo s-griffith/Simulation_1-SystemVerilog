@@ -32,7 +32,7 @@ module fas (
 			.B(b),
 			.Z(v[1])
 	);
-	NAND2 #(
+	NAND2 #(				//used as NOT gate
 			.Tpdhl(4),
 			.Tpdlh(4)
 	) g4_FAS(
@@ -64,7 +64,7 @@ module fas (
 			.B(v[3]),
 			.Z(v[5])
 	);
-	NAND2 #(
+	NAND2 #(				//used as NOT gate
 			.Tpdhl(4),
 			.Tpdlh(4)
 	) g8_FAS(
