@@ -1,5 +1,5 @@
 // 64-bit ALU test bench template
-module alu64bit_test;
+module alu64bit_test2;
 	logic [63:0] a;    // Input bit a
 	logic [63:0] b;    // Input bit b
 	logic cin;         // Carry in
@@ -17,10 +17,10 @@ module alu64bit_test;
 	);
 	
 	initial begin
-		a = {64{1'b1}};
+		a = {64{1'b0}};
 		b = {64{1'b0}};
 		b[0] = 1;
-		a[0] = 0;
+		a[63] = 1;
 		cin = 0;
 		op[0] = 0;
 		op[1] = 1;
@@ -28,13 +28,14 @@ module alu64bit_test;
 		#900
 		
 		
-		a = {64{1'b1}};
+		a = {64{1'b0}};
 		b = {64{1'b0}};
 		b[0] = 1;
-		a[0] = 1;
+		a[63] = 1;
 		cin = 0;
-		op[0] = 0;
+		op[0] = 1;
 		op[1] = 1;
 	
-	end	
+	end
+		
 endmodule
